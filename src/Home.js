@@ -13,52 +13,52 @@ function Home() {
         />
         <div className="home_row">
           <Product
-            id="1234329"
+            id="90829332"
             title="The lean Startup"
-            price={29.99}
+            price={249.99}
             image="https://electropotentinfotech.com/NewImages/software.jpg"
             rating={5}
           />
           <Product
-            id="1234320"
-            title="The lean Startup"
-            price={29.99}
+            id="3254354345"
+            title="The lean Startup akfhjsdf"
+            price={209.99}
             image="https://electropotentinfotech.com/NewImages/software.jpg"
-            rating={5}
-          />
-        </div>
-
-        <div className="home_row">
-          <Product
-            id="1234311"
-            title="The lean Startup"
-            price={29.99}
-            image="https://electropotentinfotech.com/NewImages/software.jpg"
-            rating={5}
-          />
-          <Product
-            id="1234321"
-            title="The lean Startup"
-            price={29.99}
-            image="https://electropotentinfotech.com/NewImages/software.jpg"
-            rating={5}
-          />
-          <Product
-            id="1234341"
-            title="The lean Startup"
-            price={29.99}
-            image="https://electropotentinfotech.com/NewImages/software.jpg"
-            rating={5}
+            rating={4}
           />
         </div>
 
         <div className="home_row">
           <Product
-            id="1234341"
-            title="The lean Startup"
-            price={29.99}
+            id="12321341"
+            title="The lean Startup asfsasff"
+            price={929.99}
             image="https://electropotentinfotech.com/NewImages/software.jpg"
-            rating={5}
+            rating={3}
+          />
+          <Product
+            id="49538094"
+            title="The lean Startup sadffsafd"
+            price={129.99}
+            image="https://electropotentinfotech.com/NewImages/software.jpg"
+            rating={1}
+          />
+          <Product
+            id="4903850"
+            title="The lean Startup fsafretgdsssaes"
+            price={219.99}
+            image="https://electropotentinfotech.com/NewImages/software.jpg"
+            rating={4}
+          />
+        </div>
+
+        <div className="home_row">
+          <Product
+            id="23445930"
+            title="The lean Startup asrrewqqwwqwq"
+            price={229.99}
+            image="https://electropotentinfotech.com/NewImages/software.jpg"
+            rating={2}
           />
         </div>
       </div>
