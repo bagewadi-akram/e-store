@@ -35,4 +35,5 @@
 .product_rating {
   display: flex;
   padding: 5px;
+  margin: 8px;
 }
