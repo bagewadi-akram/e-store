@@ -14,11 +14,18 @@
   object-fit: contain;
   margin: 0 20px;
 }
+.written {
+  font-size: 30px;
+  font-weight: 800;
+  color: #f8f2f2;
+  text-decoration: none;
+}
 
 .header_search {
   display: flex;
   flex: 1;
-  align-items: center;
+  /* align-items: flex-end; */
+  justify-content: flex-end;
   border-radius: 24px;
 }
 
@@ -26,13 +33,13 @@
   height: 12px;
   padding: 10px;
   border: none;
-  width: 100%;
+  width: 40%;
 }
 
 .header_searchIcon {
   padding: 5px;
   height: 22px !important;
-  background-color: #c21010;
+  background-color: #ff1616;
 }
 
 .header_optionLineOne {
@@ -58,6 +65,7 @@
 .header_nav {
   display: flex;
   justify-content: space-evenly;
+  margin-left: 20px;
 }
 
 .header_option {

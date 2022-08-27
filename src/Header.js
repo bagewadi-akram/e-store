@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
-import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 
@@ -10,10 +10,11 @@ function Header() {
   return (
     <div className="header">
       <Link to="/">
-        <img
+        {/* <img
           className="header_logo"
           src="https://electropotentinfotech.com/NewImages/logo1.png"
-        />
+        /> */}
+        <span className="header_logo written">E-Commerce Logo</span>
       </Link>
       <div className="header_search">
         <input className="header_searchInput" type="text" />
@@ -21,20 +22,20 @@ function Header() {
       </div>
       <div className="header_nav">
         <div className="header_option">
-          <span className="header_optionLineOne">Hello</span>
+          <span className="header_optionLineOne">Hello, </span>
           <span className="header_optionLineTwo">Sign in</span>
         </div>
         <div className="header_option">
           <span className="header_optionLineOne">Returns</span>
-          <span className="header_optionLineTwo">&Orders</span>
+          <span className="header_optionLineTwo"> Orders</span>
         </div>
-        <div className="header_option">
+        {/* <div className="header_option">
           <span className="header_optionLineOne">Your</span>
           <span className="header_optionLineTwo">Prime</span>
-        </div>
+        </div> */}
         <Link to="/checkout">
           <div className="header_optionBasket">
-            <ShoppingBasketIcon />
+            <ShoppingCartIcon />
             <span className="header__optionLineTwo header_basketCount">
               {basket?.length}
             </span>

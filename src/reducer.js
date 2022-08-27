@@ -3,7 +3,7 @@
 export const initialState = {
   basket: [],
 };
-//selectro
+//selector
 export const getBasketTotal = (basket) =>
   basket?.reduce((amount, item) => item.price + amount, 0);
 // console.log("basket", basket);
