@@ -10,11 +10,11 @@ function Header() {
   return (
     <div className="header">
       <Link to="/">
-        {/* <img
+        <img
           className="header_logo"
-          src="https://electropotentinfotech.com/NewImages/logo1.png"
-        /> */}
-        <span className="header_logo written">E-Commerce Logo</span>
+          src="https://www.logodesign.net/logo/lines-forming-shopping-cart-5408ld.png?size=2&industry=ecommerce"
+        />
+        {/* <span className="header_logo written">Buy Latest Products here ⤵ </span> */}
       </Link>
       <div className="header_search">
         <input className="header_searchInput" type="text" />

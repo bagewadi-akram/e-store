@@ -33,9 +33,10 @@ function Login() {
   return (
     <div className="login">
       <Link to="/">
-        <span className="login_logo  written">
-          <h2>E-Commerce Logo</h2>
-        </span>
+        <img
+          className="login_logo"
+          src="https://www.logodesign.net/logo/lines-forming-shopping-cart-5408ld.png?size=2&industry=ecommerce"
+        />
       </Link>
       <div className="login_container">
         <h1>Sign-In.</h1>

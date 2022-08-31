@@ -4,10 +4,8 @@ import Home from "./Home";
 import Checkout from "./Checkout";
 import Login from "./Login";
 import Orders from "./Orders";
-
+import Header_2 from "./Header_2";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-// import { Routes, Route, Router, Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -25,8 +23,15 @@ function App() {
             <Header />
             <Checkout />
           </Route>
+          {/* <Route path="/payment">
+            <Header />
+            <Elements stripe={promise}>
+            <Payment />
+            </Elements>
+          </Route> */}
           <Route path="/">
             <Header />
+            <Header_2 />
             <Home />
           </Route>
         </Switch>

@@ -10,20 +10,39 @@
   min-width: 100px;
   background-color: white;
   z-index: 1;
+  border-radius: 3px;
+
 }
 .product > img {
   max-height: 200px;
   width: 100%;
   object-fit: contain;
-  margin-bottom: 15px;
+    margin-bottom: 10px;
+ 
 }
-.product > button {
-  background-color: #ff1616c2;
+.buttons > button {
+  background-color: #EEEEEE;
   border: 1px solid;
+  border-radius: 2px;
   margin-top: 10px;
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
+  font-weight: 800;
+  height: 25px;
+  width: auto;
 }
+.buy_now {
+  background-color: #EEEEEE;
+  border: 1px solid;
+  border-radius: 2px;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  font-weight: 800;
+  height: 25px;
+  width: auto;
+}
+
 .product_price {
   margin-top: 5px;
 }
@@ -35,5 +54,10 @@
 .product_rating {
   display: flex;
   padding: 5px;
-  margin: 8px;
+  margin: 5px;
+}
+.buttons {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
 }
