@@ -37,7 +37,7 @@ function Login() {
       <Link to="/">
         <img
           className="login_logo"
-          src="https://www.logodesign.net/logo/lines-forming-shopping-cart-5408ld.png?size=2&industry=ecommerce"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEMxfqqs-6KlIjfevVjZ9KeuTfpWhzTMlvXQ&usqp=CAU"
         />
       </Link>
       <div className="login_container">
@@ -56,11 +56,7 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button
-            type="submit"
-            onClick={signIn}
-            className="login_signInButton"
-          >
+          <button type="submit" onClick={signIn} className="login_signInButton">
             Sign In
           </button>
         </form>
@@ -68,10 +64,7 @@ function Login() {
           By Signing-in you agree to Conditions of Use & Sales. Please see our
           Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
         </p>
-        <button
-          onClick={register}
-          className="login_registerButton"
-        >
+        <button onClick={register} className="login_registerButton">
           Create Your Account
         </button>
       </div>

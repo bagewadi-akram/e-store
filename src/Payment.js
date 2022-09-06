@@ -6,12 +6,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
-import axios from "./axios";
+import axios from "./axios"; 
 import { db } from "./firebase";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const stripe = useStripe();
   const elements = useElements();
@@ -36,43 +36,43 @@ function Payment() {
     getClientSecret();
   }, [basket]);
 
-  console.log("THE SECRET IS >>>", clientSecret);
-  console.log("👱", user);
+  // console.log("THE SECRET IS >>>", clientSecret);
+  // console.log("👱", user);
 
   const handleSubmit = async (event) => {
    // do all the fancy stripe stuff...
     event.preventDefault();
     setProcessing(true);
 
-    const payload = await stripe
-      .confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: elements.getElement(CardElement),
-        },
-      })
-      .then(({ paymentIntent }) => {
-        // paymentIntent = payment confirmation
+    // const payload = await stripe
+    //   .confirmCardPayment(clientSecret, {
+    //     payment_method: {
+    //       card: elements.getElement(CardElement),
+    //     },
+    //   })
+    //   .then(({ paymentIntent }) => {
+    //     // paymentIntent = payment confirmation
 
-        db.collection("users")
-          .doc(user?.uid)
-          .collection("orders")
-          .doc(paymentIntent.id)
-          .set({
-            basket: basket,
-            amount: paymentIntent.amount,
-            created: paymentIntent.created,
-          });
+    //     db.collection("users")
+    //       .doc(user?.uid)
+    //       .collection("orders")
+    //       .doc(paymentIntent.id)
+    //       .set({
+    //         basket: basket,
+    //         amount: paymentIntent.amount,
+    //         created: paymentIntent.created,
+    //       });
 
-        setSucceeded(true);
-        setError(null);
-        setProcessing(false);
+    //     setSucceeded(true);
+    //     setError(null);
+    //     setProcessing(false);
 
-        dispatch({
-          type: "EMPTY_BASKET",
-        });
+    //     dispatch({
+    //       type: "EMPTY_BASKET",
+    //     });
 
-        navigate.replace("/orders");
-      });
+    //     navigate.replace("/orders");
+    //   });
   };
 
   const handleChange = (event) => {
@@ -125,7 +125,9 @@ function Payment() {
           </div>
           <div className="payment_details">
 
-            <form onSubmit={handleSubmit}>
+            <form 
+            onSubmit={handleSubmit}>
+              {/* <CardElement  onChange={handleChange}/> */}
               <CardElement onChange={handleChange} />
 
               <div className="payment_priceContainer">

@@ -19,7 +19,7 @@ function Header() {
       <Link to="/">
         <img
           className="header_logo"
-          src="https://www.logodesign.net/logo/lines-forming-shopping-cart-5408ld.png?size=2&industry=ecommerce"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEMxfqqs-6KlIjfevVjZ9KeuTfpWhzTMlvXQ&usqp=CAU" 
         />
         {/* <span className="header_logo written">Buy Latest Products here ⤵ </span> */}
       </Link>

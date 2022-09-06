@@ -3,6 +3,7 @@ import './Header_2.css'
 import MaleIcon from "@mui/icons-material/Male";
 import FemaleIcon from "@mui/icons-material/Female";
 import ChildCareIcon from "@mui/icons-material/ChildCare";
+import { Link } from "react-router-dom";
 
 function Header_2() {
   return (
@@ -16,8 +17,11 @@ function Header_2() {
         <FemaleIcon />
         Women
       </span>
+      <Link to ="/checkout">
+
       <span className="header_option2">
         <ChildCareIcon />Kids</span>
+      </Link>
       <span className="header_option2">Accessories</span>
     </div>
   );
