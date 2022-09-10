@@ -1,8 +1,8 @@
 import React from "react";
 import "./Checkout.css";
-import CheckoutProduct from "./CheckoutProduct";
-import { useStateValue } from "./StateProvider";
 import Subtotal from "./Subtotal";
+import { useStateValue } from "./StateProvider";
+import CheckoutProduct from "./CheckoutProduct";
 
 function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -12,12 +12,14 @@ function Checkout() {
       <div className="checkout_left">
         {/* <img
           className="checkout_ad"
-          src="https://electropotentinfotech.com/images/about/about-us.png"
+          src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
           alt=""
         /> */}
+
         <div>
           <h3>Hello, {user?.email}</h3>
-          <h2 className="checkout_title">Your Shopping Basket</h2>
+          <h2 className="checkout_title">Your shopping Basket</h2>
+          
           {basket.map((item) => (
             <CheckoutProduct
               id={item.id}
@@ -29,8 +31,8 @@ function Checkout() {
           ))}
         </div>
       </div>
+
       <div className="checkout_right">
-        {/* <h2> The subtotal</h2> */}
         <Subtotal />
       </div>
     </div>

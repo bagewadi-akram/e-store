@@ -9,21 +9,23 @@ function Order({ order }) {
     <div className="order">
       <h2>Order</h2>
       <p>{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}</p>
-      <p className="order__id">
-        <small>0</small>
+      <p className="order_id">
+        <small>{order.id}</small>
       </p>
       {order.data.basket?.map((item) => (
         <CheckoutProduct
-        id={item.id}
-        title={item.title}
-        image={item.image}
-        price={item.price}
-        rating={item.rating}
-        hideButton
+          id={item.id}
+          title={item.title}
+          image={item.image}
+          price={item.price}
+          rating={item.rating}
+          hideButton
         />
       ))}
       <CurrencyFormat
-        renderText={(value) => <h3 className="order__total">Order Total: 0</h3>}
+        renderText={(value) => (
+          <h3 className="order_total">Order Total: {value}</h3>
+        )}
         decimalScale={2}
         value={order.data.amount / 100}
         displayType={"text"}

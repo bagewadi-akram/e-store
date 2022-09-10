@@ -1,5 +1,6 @@
 import firebase from "firebase";
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDmK1Ac_yh7SKk4UAdRdMwLLnIty6IlJpo",
   authDomain: "e-store-f8f5b.firebaseapp.com",
@@ -7,7 +8,7 @@ const firebaseConfig = {
   storageBucket: "e-store-f8f5b.appspot.com",
   messagingSenderId: "760456621304",
   appId: "1:760456621304:web:e158350be05f35a3c2df0d",
-  measurementId: "G-LP8X5Z4Z21",
+  measurementId: "G-LP8X5Z4Z21"
 };
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
