@@ -16,6 +16,6 @@
 .home_image {
   width: 100%;
   z-index: -1;
-  margin-bottom: -400px;
+  margin-bottom: -700px;
   mask-image: linear-gradient(to bottom, rgb(247, 12, 12), rgba(155, 1, 1, 0));
 }

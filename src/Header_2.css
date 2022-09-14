@@ -4,8 +4,9 @@
    justify-content: space-evenly;
    /* position: absolute; */
     width: 100%;
-    height: 80px;
+    height: 70px;
     background-color: white;
+    text-decoration: none;
 }
 .header_option2{
     display: flex;

@@ -6,12 +6,14 @@ import Login from "./Login";
 import Payment from "./Payment";
 import Orders from "./Orders";
 import Header_2 from "./Header_2";
+import Categories from "./Categories";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import {loadStripe} from "@stripe/stripe-js"
 import {Elements} from "@stripe/react-stripe-js"
+import ViewAll from "./ViewAll";
 
 
 const promise = loadStripe(
@@ -56,8 +58,17 @@ function App() {
           <Route path="/payment">
             <Header />
             <Elements stripe={promise}>
-            <Payment />
+              <Payment />
             </Elements>
+          </Route>
+          <Route path="/categories">
+            <Header />
+                      <Categories />
+          </Route>
+          <Route path="/viewall">
+            <Header />
+            <Header_2 />
+            <ViewAll />
           </Route>
           <Route path="/">
             <Header />

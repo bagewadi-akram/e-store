@@ -19,7 +19,7 @@ function Header() {
       <Link to="/">
         <img
           className="header_logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEMxfqqs-6KlIjfevVjZ9KeuTfpWhzTMlvXQ&usqp=CAU" 
+          src="https://global-uploads.webflow.com/5e157547d6f791d34ea4e2bf/6087f7f9e5ecc6623f3ecbbe_logo-example2.svg"
         />
         {/* <span className="header_logo written">Buy Latest Products here ⤵ </span> */}
       </Link>
