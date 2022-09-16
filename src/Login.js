@@ -17,6 +17,7 @@ function Login() {
         history.push("/");
       })
       .catch((error) => alert(error.message));
+      alert("Welcome " + email);
   };
   const register = (e) => {
     e.preventDefault();
@@ -31,6 +32,7 @@ function Login() {
         console.log(auth);
       })
       .catch((error) => alert(error.message));
+      alert("Welcome" + email)
   };
   return (
     <div className="login">

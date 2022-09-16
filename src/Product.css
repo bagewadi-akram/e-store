@@ -10,6 +10,11 @@
   min-width: 100px;
   background-color: white;
   z-index: 1;
+  transition: 0.2s;
+}
+.product:hover {
+  padding: 21px;
+  filter: drop-shadow(1px 1px 3px #111);
 }
 
 .product_rating {

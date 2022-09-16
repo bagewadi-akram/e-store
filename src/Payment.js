@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Payment.css";
 import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
-import { Link, useHistory, useNavigate } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
@@ -140,7 +140,7 @@ function Payment() {
                   prefix={"$"}
                 />
                 <button disabled={processing || disabled || succeeded}>
-                  <span>{processing ? <p>Processing</p> : <p>Buy Now</p>}</span>
+                  <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>
 

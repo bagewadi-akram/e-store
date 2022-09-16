@@ -15,7 +15,11 @@ const reducer = (state, action) => {
         ...state,
         basket: [...state.basket, action.item],
       };
-
+    case "OPEN_PRODUCT":
+      return {
+        ...state,
+        basket: [...state.basket, action.item],
+      };
     case "EMPTY_BASKET":
       return {
         ...state,

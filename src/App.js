@@ -14,6 +14,7 @@ import { useStateValue } from "./StateProvider";
 import {loadStripe} from "@stripe/stripe-js"
 import {Elements} from "@stripe/react-stripe-js"
 import ViewAll from "./ViewAll";
+import Singleproduct from "./Singleproduct";
 
 
 const promise = loadStripe(
@@ -63,12 +64,17 @@ function App() {
           </Route>
           <Route path="/categories">
             <Header />
-                      <Categories />
+            <Categories />
           </Route>
           <Route path="/viewall">
             <Header />
             <Header_2 />
             <ViewAll />
+          </Route>
+          <Route path="/singleproduct">
+            <Header />
+            <Header_2 />
+            <Singleproduct />
           </Route>
           <Route path="/">
             <Header />
