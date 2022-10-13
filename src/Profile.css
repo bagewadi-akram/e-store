@@ -1,0 +1,88 @@
+.profile {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 2px 2px 5px lightgrey, -2px -2px 5px lightgrey;
+}
+.profileicon {
+  background-color: rgb(253, 55, 6);
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 50%;
+  padding: 20px;
+}
+.usrname {
+  padding: 10px;
+}
+.userdetails {
+  flex: 1;
+  padding: 5px;
+}
+.userdetails > p {
+  font-size: 14px;
+  margin-top: -15px;
+  margin-left: 10px;
+}
+.logout {
+  margin-right: 20px;
+}
+.orders {
+  padding: 10px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid lightgrey;
+  border-top: 1px solid lightgrey;
+}
+.orders > h2 {
+  border: none;
+  margin: 0;
+  padding-top: 5px;
+  align-self: flex-start;
+}
+.orders > p {
+  padding: 10px;
+}
+.orders > h5 {
+  margin-top: -20px;
+}
+.contact {
+  padding: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid lightgrey;
+}
+.contact > h2 {
+  border: none;
+
+  margin: 0;
+  padding-top: 5px;
+  align-self: flex-start;
+}
+.number {
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 2px solid grey;
+}
+.number > h4 {
+  letter-spacing: 0.2em;
+  margin-bottom: -12px;
+}
+.icn {
+  padding-top: 20px;
+  width: 30%;
+}
+.contactcont {
+  justify-content: space-evenly;
+}
+.payment{
+  padding: 10px ;
+}
+.payment > h2 {
+  border: none;
+}
+.paymenticon {
+  text-align: center;
+}
+.paymenticon > p {
+  margin-top: -1px;
+}

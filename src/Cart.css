@@ -1,0 +1,20 @@
+.right{
+    background-color: white;
+    width: 69%;
+    align-items: flex-start;
+    
+}
+.left {
+    /* background-color: white; */
+    width: 29%;
+}
+.cart {
+    background-color: white;
+    margin-top: -20px;
+    padding: 10px;
+}
+.cart > h1, h2 {
+    border-left: 2px solid grey; 
+    letter-spacing: 0.1em;
+    padding-left: 20px;
+}

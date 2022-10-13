@@ -14,10 +14,10 @@ function Login() {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        history.push("/");
+        history.push("/profile");
       })
       .catch((error) => alert(error.message));
-      alert("Welcome " + email);
+      // alert("Welcome " + email);
   };
   const register = (e) => {
     e.preventDefault();
@@ -27,12 +27,12 @@ function Login() {
       .then((auth) => {
         // it successfully created a new user with email and password
         if (auth) {
-          history.push("/");
+          history.push("/profile");
         }
         console.log(auth);
       })
       .catch((error) => alert(error.message));
-      alert("Welcome" + email)
+      // alert("Welcome" + email)
   };
   return (
     <div className="login">

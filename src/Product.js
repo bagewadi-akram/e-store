@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Product.css";
+import React from 'react'
+import './Product.css'
 import { useStateValue } from "./StateProvider";
+import { Link } from "react-router-dom";
 
-function Product({ id, title, image, price, rating }) {
+
+function Product({ id, title, image, price }) {
   const [{ basket }, dispatch] = useStateValue();
 
-  // console.log("this is the basket>>>", basket);  
-
   const addToBasket = () => {
+    // dispatch the item into the data layer
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
@@ -16,41 +16,60 @@ function Product({ id, title, image, price, rating }) {
         title: title,
         image: image,
         price: price,
-        rating: rating,
+      },
+    });
+  };  
+  const productOpen = () => {
+    // dispatch the item into the data layer
+    dispatch({
+      type: "PRODUCT_OPEN",
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
       },
     });
   };
-
-  
   return (
-    <div className="product">
-      <div className="product_info">
-        
-          <p> {title}</p>
-          <p className="product_price">
-            <small>$</small>
-            <strong>{price}</strong>
-          </p>
-          <div className="product_rating">
-            {Array(rating)
-              .fill()
-              .map((_, i) => (
-                <p> 🌟 </p>
-              ))}
+    <div className="">
+      <div className="container page-wrapper">
+        <div className="page-inner">
+          <div className="row">
+            <div className="el-wrapper">
+              <div className="box-up">
+                <img className="img" src={image} alt="" />
+                <div className="img-info">
+                  <Link to="/productopensend">
+                    <div className="info-inner" onClick={productOpen}>
+                      <span className="p-name">{title}</span>
+                      <span className="p-company">{id}</span>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="box-down">
+                <div className="h-bg">
+                  <div className="h-bg-inner"></div>
+                </div>
+
+                <a className="addtocart" onClick={addToBasket}>
+                  <span className="price">
+                    <small>$</small>
+                    <strong>{price}</strong>
+                  </span>
+                  <span className="add-to-cart">
+                    <span className="txt">Add in cart</span>
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
-        
-      </div>
-      <img src={image} alt="" />
-      <div className="buttons">
-        <button className="buy_now" onClick={addToBasket}>
-          Add to Cart{" "}
-        </button>
-        <Link to="/checkout">
-          <button className="buy_now"> Buy now</button>
-        </Link>
+        </div>
       </div>
     </div>
   );
 }
 
-export default Product;
+export default Product
