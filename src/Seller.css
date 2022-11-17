@@ -1,0 +1,48 @@
+.container{
+    /* width: 97%; */
+    padding: 20px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: white; */
+
+}
+.information{
+    border-bottom: 1px solid #111;
+    width: 55%;
+}
+.information > h1 {
+position: absolute;
+z-index: 1;
+bottom: 23px;
+padding: 20px;
+letter-spacing: 0.1em;
+}
+.sellerimage {
+    position: relative;
+    width: 100%;
+object-fit: cover;
+  mask-image: linear-gradient(to bottom, rgb(247, 12, 12), rgba(155, 1, 1, 0.493));
+
+}
+.from{
+    padding: 5px 5px;
+}
+.from > h1 {
+    letter-spacing: 0.1em;
+}
+.from > input{
+    margin: 5px 5px;
+    width: 500px;
+    height: 35px;
+}
+.from > label{
+    margin: 5px 5px;
+}
+.from > button {
+    align-self: flex-end;
+    margin-top: 20px;
+    padding: 2px;
+    width: 100px;
+    height: 30px;
+    border-radius: 0;
+}

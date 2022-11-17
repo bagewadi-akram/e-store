@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import Cart from './Cart'
 
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
+  
+  const filter = (cateItem) => {
+
+}
+  
+  console.log(user)
   return (
     <div className="navbar">
       <div className="navbar-one">
@@ -26,27 +33,53 @@ function Header() {
             <SearchIcon />
           </button>
         </span>
+        <Link to="/seller">
+          <div className="vendor">
+            <p> Seller </p>
+            <PermIdentityIcon />
+          </div>
+        </Link>
 
-        <div className="vendor">
-          <p> Seller </p>
-          <PermIdentityIcon />  
-        </div>
         <Link to="/cart">
           <div className="link">
             <ShoppingCartIcon fontSize="large" />
             <p className="count">{basket?.length}</p>
           </div>
         </Link>
-        <Link to="/profile" style={{ textDecoration: "none" }}>
+        <Link
+          // to={!user ? "/login" : "/profile"}
+          to="/login"
+          style={{ textDecoration: "none" }}
+        >
           <div className="link">
-            <AccountCircleIcon /> <p>Profile</p>
+            <AccountCircleIcon /> <p>{!user ? "login" : user.email}</p>
           </div>
         </Link>
       </div>
       <div className="navbar-two">
-        <span className="category">All</span>
-        <span className="category">Men </span>
-        <span className="category">Women </span>
+        <Link to="/item">
+          <span className="category">All</span>
+        </Link>
+        <Link to="/item">
+          <span className="category">men</span>
+        </Link>
+        <span
+          className="category"
+          onClick={() => {
+            filter("men");
+          }}
+        >
+          Men{" "}
+        </span>
+        <span
+          className="category"
+          name="woman"
+          onClick={(event) => {
+            filter(event.target.name);
+          }}
+        >
+          Women{" "}
+        </span>
         <span className="category">Electronics </span>
         <span className="category">Beauty / Health </span>
         <span className="category">Accessories </span>

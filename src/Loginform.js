@@ -4,94 +4,65 @@ import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 
 function App() {
+  // React States
   const [data, setData] = useState({});
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  //user database fetched from api
-  useEffect(() => {
-    axios("http://localhost:3002/profile")
-      .then((respo) => {
-        setData(respo.data);
-      })
-      .catch((error) => {
-        console.error(error, "Error is fetching");
-        setError(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const history = useHistory();
 
-  //push to profile
   const openprofile = () => {
     history.push("/profile");
-  };
-  
-  //push to signup
-const signup = () => {
-  history.push("/signup");
-};
-  // React States
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const errors = {
-    uname: "invalid username",
-    pass: "invalid password",
   };
 
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
 
-    var { uname, pass } = document.forms[0];
+    var {
+      name = name.value,
+      email = email.value,
+      password = password.value 
+    } = document.forms[0];
 
-    // Find user login info
-    const userData = data.find((user) => user.email === uname.value);
-    console.log("uname.value", uname.value);
+    setData({ name, email, password });
+    console.log("data", data);
+    fetch("http://localhost:3002/profile", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      setIsSubmitted(true);
 
-    
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-      }
-    } else {
-      // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
-    }
   };
-
-  // Generate JSX code for error message
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
-    );
-
   // JSX code for login form
   const renderForm = (
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label>Username </label>
-          <input type="email" name="uname" required />
-          {renderErrorMessage("uname")}
+          <input type="text" name="name" required />
+        </div>
+        <div className="input-container">
+          <label>Email </label>
+          <input type="email" name="email" required />
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
+          <input type="password" name="password" required />
         </div>
         <div className="button-container">
           <input type="submit" />
         </div>
       </form>
-      <span onClick={signup}>Dont have account SignUp Here !</span>
     </div>
   );
   const loginForm = (

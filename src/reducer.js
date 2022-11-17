@@ -1,7 +1,7 @@
 export const initialState = {
   basket: [],
-  user: null,
   productopen: [],
+  user: null
 };
 
 // Selector

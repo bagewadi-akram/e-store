@@ -7,6 +7,11 @@ import Cart from "./Cart";
 import Profile from "./Profile";
 import Login from "./Login";
 import Payment from "./Payment";
+import Footer from "./Footer";
+import Item from "./Item";
+import  Category  from "./Category";
+import Seller from "./Seller";
+import Loginform from "./Loginform";
 
 
 function App() {
@@ -14,32 +19,45 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/seller">
+            <Header />
+            <Seller />
+          </Route>
           <Route path="/payment">
             <Header />
             {/* <Elements stripe={promise}> */}
-              <Payment />
+            <Payment />
             {/* </Elements> */}
           </Route>
-
           <Route path="/profile">
             <Header />
-            {/* <Profile /> */}
-            <Login />
+            <Profile />
           </Route>
 
+          <Route path="/signup">
+            <Loginform />
+          </Route>
+
+          <Route path="/item">
+            <Header />
+            <Item />
+            {/* <Category /> */}
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/productopensend">
             <Header />
             <ProductOpenSend />
           </Route>
-
           <Route path="/cart">
             <Header />
             <Cart />
           </Route>
-
           <Route path="/">
             <Header />
             <Home />
+            <Footer />
           </Route>
         </Switch>
       </div>

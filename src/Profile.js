@@ -10,9 +10,12 @@ import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import PaymentsIcon from "@mui/icons-material/Payments";
 
 
-function Profile({ id, title, image, price }) {
-  const [{ basket }, dispatch] = useStateValue();
 
+function Profile({ id, title, image, price }) {
+  const [{ basket, user }, dispatch] = useStateValue();
+const handleAuthenticaton = () => {
+ 
+};
  
   return (
     <div className="profile">
@@ -22,9 +25,9 @@ function Profile({ id, title, image, price }) {
         </div>
         <div className="userdetails">
           <h1>@User.name</h1>
-          <p>abcdf23@gmail.com</p>
+          {/* <p>{user.email}</p> */}
         </div>
-        <div className="logout">
+        <div className="logout" onClick={handleAuthenticaton} >
           <LogoutIcon fontSize="large" />
         </div>
       </div>
