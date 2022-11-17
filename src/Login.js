@@ -1,130 +1,119 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 
-function App() {
-  const [data, setData] = useState({});
+function Login() {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [details, setDetails] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [detailsmatch, setDetailsmatch] = useState("");
 
-  //user database fetched from api
   useEffect(() => {
-    axios("http://localhost:3002/profile")
-      .then((respo) => {
-        setData(respo.data);
+    axios
+      .get("http://localhost:3002/profile")
+      .then((res) => {
+        setDetails(res.data);
       })
-      .catch((error) => {
-        console.error(error, "Error is fetching");
-        setError(error);
-      })
-      .finally(() => {
-        setLoading(false);
+      .catch((err) => {
+        console.warn(err.message, "Error is fetching");
+        setError(err.message);
       });
   }, []);
-  const history = useHistory();
 
-  //push to profile
-  const openprofile = () => {
-    history.push("/profile");
-  };
-  
-  //push to signup
-const signup = () => {
-  history.push("/signup");
-};
-  // React States
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const errors = {
-    uname: "invalid username",
-    pass: "invalid password",
-  };
-
-  const handleSubmit = (event) => {
-    //Prevent page reload
-    event.preventDefault();
-
-    var { uname, pass } = document.forms[0];
-
-    // Find user login info
-    const userData = data.find((user) => user.email === uname.value);
-    console.log("uname.value", uname.value);
-
-    
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-      }
+  const userData = details.find((user) => user.email === email);
+  if (userData) {
+    if (userData.password !== password) {
+      // Invalid password
+      setDetailsmatch("PassWord Doesn't Match ");
     } else {
-      // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
+      setIsSubmitted(true);
     }
+  } else {
+    // Username not found
+      setDetailsmatch("Email Doesn't Match ");
+  }
+
+  const [log, setLog] = useState();
+
+  const signup = () => {
+    setLog(true);
   };
+  const signin = () => {
+    setLog(false);
+  };
+  const signinForm = (
+    <div className="login_container">
+      <h1>Sign-In.</h1>
 
-  // Generate JSX code for error message
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
-    );
-
-  // JSX code for login form
-  const renderForm = (
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label>Username </label>
-          <input type="email" name="uname" required />
-          {renderErrorMessage("uname")}
-        </div>
-        <div className="input-container">
-          <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
-        </div>
-        <div className="button-container">
-          <input type="submit" />
-        </div>
+      <form>
+        <h5>Email:</h5>
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <h5>Password:</h5>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </form>
-      <span onClick={signup}>Dont have account SignUp Here !</span>
+      <p>
+        <input type="checkbox" required /> Remember me !
+      </p>
+      <button type="submit" className="login_signInButton">
+        Sign In
+      </button>
+      <span onClick={signup} className="login_registerButton">
+        Don't have Account Create here!
+      </span>
     </div>
   );
-  const loginForm = (
-    <div className="box">
-      <span>
-        <Link to="/">
-          <img
-            className="header_logo"
-            src="https://www.dreamhost.com/assets/domains/logo.store.color-b8b6423a038c3ba1b637f437c7b861bd7001bdffb7ecc9c4f39e12203e4122f7.svg"
-            alt=""
-          />
-        </Link>
+  const signupForm = (
+    <div className="login_container">
+      <h1>Sign-In.</h1>
+
+      <form>
+        <h5>Name:</h5>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <h5>Email:</h5>
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <h5>Password:</h5>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </form>
+      <p>
+        <input type="checkbox" required /> By Signing-in you agree to Conditions
+        of Use & Sales. Please see our Privacy Notice, our Cookies Notice and
+        our Interest-Based Ads Notice.
+      </p>
+      <button type="submit" className="login_signInButton">
+        Sign In
+      </button>
+
+      <span onClick={signin} className="login_registerButton">
+        Have account ! Signin
       </span>
-      <div className="login-form">
-        <div className="title">Sign In</div>
-        {/* {isSubmitted ? <Profile /> : renderForm} */}
-        {isSubmitted ? (
-          <div className="flx-col just-bet aln-itm-cent">
-            User is successfully logged in
-            <button className="buttonsmall" onClick={openprofile}>
-              {" "}
-              Ok{" "}
-            </button>
-          </div>
-        ) : (
-          renderForm
-        )}
-      </div>
     </div>
   );
   return (
-    <div className="box">
-      <span>
+    <>
+      <div className="box flx-col aln-itm-cent just-around">
         <Link to="/">
           <img
             className="header_logo"
@@ -132,23 +121,10 @@ const signup = () => {
             alt=""
           />
         </Link>
-      </span>
-      <div className="login-form">
-        <div className="title">Sign In</div>
-        {/* {isSubmitted ? <Profile /> : renderForm} */}
-        {isSubmitted ? (
-          <div className="flx-col just-bet aln-itm-cent">
-            User is successfully logged in
-            <button className="buttonsmall" onClick={openprofile}>
-              Ok
-            </button>
-          </div>
-        ) : (
-          renderForm
-        )}
+        {log ? signupForm : signinForm}
       </div>
-    </div>
+    </>
   );
 }
 
-export default App;
+export default Login;

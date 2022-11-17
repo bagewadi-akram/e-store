@@ -17,12 +17,10 @@ function App() {
     //Prevent page reload
     event.preventDefault();
 
-    var {
-      name = name.value,
-      email = email.value,
-      password = password.value 
-    } = document.forms[0];
-
+    var { name, email, password } = document.forms[0];
+    var name = name.value;
+    var email = email.value;
+    var password = password.value;
     setData({ name, email, password });
     console.log("data", data);
     fetch("http://localhost:3002/profile", {
@@ -40,7 +38,7 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-      setIsSubmitted(true);
+        // history.push('/profile')
 
   };
   // JSX code for login form

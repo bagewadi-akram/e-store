@@ -1,77 +1,67 @@
 .box {
-  font-family: sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 470px;
+  height: 650px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+}
+.header_logo {
+  width: 180px;
+  object-fit: contain;
+}
+.login_container {
+  margin-top: -20px;
+  width: 320px;
+  height: fit-content;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 20px;
-  height: 100vh;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #f8f9fd;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 20px;
 }
-
-input[type="text"],
-input[type="password"] {
-  height: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-input[type="submit"] {
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  background: #00b4cc;
-  border: 1px solid #003b42;
-  color: #fff;
-  padding: 10px 20px;
-}
-
-input[type="submit"]:hover {
-  background: #79ebfa;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-}
-
-.login-form {
-  background-color: white;
-  padding: 2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.list-container {
-  display: flex;
-}
-
-.error {
-  color: red;
-  font-size: 12px;
-}
-
-.title {
-  font-size: 25px;
+.login_container > h1 {
+  font-weight: 500;
   margin-bottom: 20px;
 }
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 10px;
+.login_container > form > h5 {
+  margin-bottom: 5px;
 }
-.buttonsmall {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+.login_container > form > input {
+  height: 30px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: 98%;
+}
+.login_container > p {
+  margin-top: 15px;
+  font-size: 12px;
+  letter-spacing: 0.1px;
+}
+.login_signInButton {
+  background-color: #5cb8e4;
+  font-weight: 800;
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
   margin-top: 10px;
-  background-color: #00b4cc;
-  border: none;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
 }
-.buttonsmall:hover {
-  background-color: #00b4cc;
-box-shadow: 2px 2px 3px #023c44, 
-            -1px -1px 2px #023c44;
+.login_registerButton {
+  cursor: pointer;
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 12px;
+  text-align: right;
+  color: red;
+}
+.login_line {
+  padding: 2px;
+  font-size: 12px;
+  color: red;
+  align-self: flex-end;
 }
