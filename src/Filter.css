@@ -1,0 +1,8 @@
+.fil{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+    padding: 10px;
+margin-left: 40px;
+margin-right: 40px;
+}

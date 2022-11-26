@@ -8,13 +8,18 @@ import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import PaymentsIcon from "@mui/icons-material/Payments";
+import { useHistory } from "react-router-dom";
 
 
 
 function Profile({ id, title, image, price }) {
   const [{ basket, user }, dispatch] = useStateValue();
-const handleAuthenticaton = () => {
- 
+  const history = useHistory()
+const logOut = () => {
+  dispatch({
+    type: "EMPTY_USER",
+  });
+  history.push("/login")
 };
  
   return (
@@ -24,10 +29,15 @@ const handleAuthenticaton = () => {
           <AccountCircleIcon />
         </div>
         <div className="userdetails">
-          <h1>@User.name</h1>
+          {user.map((detail) => (
+            <>
+              <h1>{detail.name}</h1>
+              <p>{detail.email}</p>
+            </>
+          ))}
           {/* <p>{user.email}</p> */}
         </div>
-        <div className="logout" onClick={handleAuthenticaton} >
+        <div className="logout" onClick={logOut}>
           <LogoutIcon fontSize="large" />
         </div>
       </div>
@@ -69,7 +79,7 @@ const handleAuthenticaton = () => {
             />
             <span className="number">
               <h4>Feel Free to Email</h4>
-              <p>abcd123@acdd.com</p>
+              <p>yourstore@store.com</p>
             </span>
           </div>
         </div>

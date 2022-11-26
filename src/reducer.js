@@ -1,7 +1,9 @@
 export const initialState = {
   basket: [],
   productopen: [],
-  user: null
+  filter: [],
+  user: [],
+  api: [],
 };
 
 // Selector
@@ -24,15 +26,14 @@ const reducer = (state, action) => {
       };
 
     case "PRODUCT_OPEN":
-    
-          return {
-            ...state,
-            productopen: [action.item],
-          };
-       
-   
-    
-    
+      return {
+        ...state,
+        productopen: [action.item],
+      };
+    case "ADD_FILTER":
+     
+        return { ...state, filter: [...action.filt] };
+     
 
     case "REMOVE_FROM_BASKET":
       const index = state.basket.findIndex(
@@ -52,11 +53,28 @@ const reducer = (state, action) => {
         ...state,
         basket: newBasket,
       };
+    case "FILTER":
+      // return {
+      //   ...state,
+      //   api: [...state.api, action.cate],
+      // };
+      return { ...state, api: [...action.cate] };
+
+    case "FILTERNULL":
+      return {
+        ...state,
+        api: [],
+      };
 
     case "SET_USER":
       return {
         ...state,
-        user: action.user,
+        user: [...state.user, action.detail],
+      };
+    case "EMPTY_USER":
+      return {
+        ...state,
+        user: [],
       };
 
     default:

@@ -33,7 +33,7 @@ function Product({ id, title, image, price }) {
   };
   return (
     <div className="">
-      <div className="container page-wrapper">
+      <div className="containerr page-wrapper">
         <div className="page-inner">
           <div className="row">
             <div className="el-wrapper">
@@ -54,7 +54,7 @@ function Product({ id, title, image, price }) {
                   <div className="h-bg-inner"></div>
                 </div>
 
-                <a className="addtocart" onClick={addToBasket}>
+                <div className="addtocart" onClick={addToBasket}>
                   <span className="price">
                     <small>$</small>
                     <strong>{price}</strong>
@@ -62,7 +62,7 @@ function Product({ id, title, image, price }) {
                   <span className="add-to-cart">
                     <span className="txt">Add in cart</span>
                   </span>
-                </a>
+                </div>
               </div>
             </div>
           </div>

@@ -1,48 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
 import Product from "./Product";
+import { useStateValue } from "./StateProvider";
+import"./Category.css"
 
- class Category extends Component {
-  constructor() {
-    super();
-    this.state = {
-      list: null,
-    };
-  }
-  componentDidMount() {
-    fetch("http://localhost:3002/products").then((response) => {
-      response.json().then((result) => {
-        console.log('result', result)
-        result.filter((category) => {category.includes('men')})
-        this.setState({
-          list: result
-        });
-      });
-    });
-  }
-  
-  render() {
-    // console.log('this.state', this.state)
-    return (
-      <div>
-        {this.state.list ? (
-          <div>
-            {this.state.list
-              // .filter((category) => category.includes("men"))
-              .map((item, i) => (
-                <Product
-                  id={item.category}
-                  title={item.title}
-                  image={item.image}
-                  price={item.price}
-                />
-              ))}
-          </div>
-        ) : (
-          <h1>Please Wait...... <br /> While Data is loading </h1>
-        )}
-       
-      </div>
-    );
-  }
+function Category() {
+  const [{ api, user }] = useStateValue();
+  return (
+    <div >
+      Hello, {user.map((detail)=>(<strong>{detail.name}</strong>))}
+      {api ? (
+        <div className="catege">
+          {api.map((cate, i) => (
+            <Product
+              id={cate.category}
+              title={cate.title}
+              image={cate.image}
+              price={cate.price}
+            />
+          ))}
+        </div>
+      ) : (
+        <p>Please Wait.....🇼</p>
+      )}
+    </div>
+  );
 }
 export default Category;

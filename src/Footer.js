@@ -170,7 +170,6 @@ function Footer() {
                   <a
                     href="https://www.facebook.com"
                     title="Facebook"
-                    onclick="_gaq.push(['_trackSocial', 'Facebook', 'Follow', 'Footer', 'undefined', 'True']);"
                   >
                     <img
                       width="24"
@@ -184,7 +183,6 @@ function Footer() {
                   <a
                     href="https://plus.google.com"
                     title="Google+"
-                    onclick="_gaq.push(['_trackSocial', 'GooglePlus', 'Follow', 'Footer', 'undefined', 'True']);"
                   >
                     <img
                       width="24"
@@ -218,7 +216,6 @@ function Footer() {
                   <a
                     href="https://www.twitter.com"
                     title="Twitter"
-                    onclick="_gaq.push(['_trackSocial', 'Twitter', 'Follow', 'Footer', 'undefined', 'True']);"
                   >
                     <img
                       width="67"
@@ -253,28 +250,7 @@ function Footer() {
               </p>
             </div>
             {/* <!--/.footer-legal--> */}
-            <div className="footer-payment">
-              <ul>
-                <li className="ftr-stella">
-                  <span title="Stella Service" onclick="openLink('#')"></span>
-                </li>
-                <li>
-                  <span
-                    onclick="clickTrack(); return false;"
-                    onmouseover="this.style.cursor='pointer'"
-                  >
-                    <img
-                      border="0"
-                      alt="HACKER SAFE certified sites prevent over 99.9% of hacker crime."
-                      src="https://images.scanalert.com/meter/www.art.com/31.gif"
-                    />
-                  </span>
-                </li>
-                <li className="ftr-bbb">
-                  <span title="BBB" onclick="#"></span>
-                </li>
-              </ul>
-            </div>
+           
             {/* <!--/.footer-payment--> */}
           </div>
           {/* <!--/.footer-custom--> */}

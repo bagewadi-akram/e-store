@@ -9,51 +9,66 @@ import Login from "./Login";
 import Payment from "./Payment";
 import Footer from "./Footer";
 import Item from "./Item";
-import  Category  from "./Category";
 import Seller from "./Seller";
-import Loginform from "./Loginform";
+import Category from "./Category";
+import Filteropen from "./Filteropen";
 
 
 function App() {
+ 
   return (
     <Router>
       <div className="app">
         <Switch>
+          {/* ----------------------------Payment Routes------------------------ */}
+          <Route path="/payment">
+            <Header />
+            <Payment />
+          </Route>
+
+          {/* ----------------------------Vendor Routes------------------------ */}
           <Route path="/seller">
             <Header />
             <Seller />
           </Route>
-          <Route path="/payment">
-            <Header />
-            {/* <Elements stripe={promise}> */}
-            <Payment />
-            {/* </Elements> */}
-          </Route>
+
+          {/* ----------------------------Login Routes------------------------ */}
           <Route path="/profile">
             <Header />
             <Profile />
-          </Route>
-
-          <Route path="/signup">
-            <Loginform />
-          </Route>
-
-          <Route path="/item">
-            <Header />
-            <Item />
-            {/* <Category /> */}
+            <Footer />
           </Route>
           <Route path="/login">
             <Login />
           </Route>
+
+
+          {/* ----------------------------filter Routes------------------------ */}
+
+          <Route path="/filter">
+            <Header />
+            <Filteropen />
+          </Route>
+
+          {/* ----------------------------Category Routes------------------------ */}
+          <Route path="/item">
+            <Header />
+            {/* <Item /> */}
+            <Category />
+          </Route>
+
+          {/* ----------------------------Product Routes------------------------ */}
           <Route path="/productopensend">
             <Header />
             <ProductOpenSend />
           </Route>
+
           <Route path="/cart">
             <Header />
             <Cart />
           </Route>
+
+          {/* ----------------------------Home Routes------------------------ */}
           <Route path="/">
             <Header />
             <Home />

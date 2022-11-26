@@ -9,7 +9,11 @@ function Cart() {
 
   return (
     <div className="cart ">
-      <h1>Hello, Welcome Guest </h1>
+      {user.map((detail) => (
+        <h1>
+          Hello, Welcome <strong>{detail.name}</strong>
+        </h1>
+      ))}
       <h2>Your Shopping Basket </h2>
       <div className="flx-row just-around ">
         <div className="right flx-col ">

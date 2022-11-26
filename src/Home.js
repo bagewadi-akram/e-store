@@ -23,7 +23,9 @@ function Home() {
       <div className="hero-text flx-col aln-itm-cent fulwid">
         <h1>Shop top brands from 40% to 60% off end of season sale</h1>
         <p>(Extra 10% off on credit cards)</p>
-        <button className="button">Explore now</button>
+        <Link to="/item">
+          <button className="button">Explore now</button>
+        </Link>
       </div>
       {/* Container with Products */}
       <div className="flx-row just-around pdlr-5">
@@ -340,7 +342,7 @@ function Home() {
       </div>
       <div>
         <div className="wrapflex">
-        <h1>Shop By Categories 🛍</h1>
+          <h1>Shop By Categories 🛍</h1>
           <div className="cate flx-col aln-itm-cent">
             <img
               className="pos-rel"
